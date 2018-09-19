@@ -1,7 +1,13 @@
 # Acceptance Tests
-Feature: Title check
-  I should be able to go to a website and check its title
+Feature: Acceptance Tests
+  I should be able to hit the website and perform basic functionality
 
-Scenario: Get the title of webpage
+Scenario: Check the web page's title
   Given I go to the website "/"
-  Then I expect the title of the page "Countdown Timer"
+  Then I expect the title of the page to be "Countdown Timer"
+
+Scenario: Start Countdown
+  Given I go to the website "/"
+  When I enter "10" seconds in the time field
+  And I click the Start Countdown button
+  Then I expect the countdown time to be updated to "00:10"
