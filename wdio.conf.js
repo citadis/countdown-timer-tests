@@ -140,7 +140,7 @@ exports.config = {
     tags: [], // <string[]> (expression) only execute the features or scenarios with tags matching the expression
     timeout: 20000, // <number> timeout for step definitions
     ignoreUndefinedDefinitions: false // <boolean> Enable this config to treat undefined definitions as warnings.
-  }
+  },
 
   //
   // =====
@@ -172,8 +172,9 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-  // before: function (capabilities, specs) {
-  // },
+  before: function (capabilities, specs) {
+    browser.pause(1000)
+  },
   /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
